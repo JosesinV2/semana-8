@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<diccionarioDatos>
+
+    <!-- ================================================= -->
+    <!-- ESTUDIANTE -->
+    <!-- ================================================= -->
+
+    <entidad nombre="Estudiante" codigo="DD-01">
+
+        <campo>
+            <nombre>id_estudiante</nombre>
+            <tipo>Entero</tipo>
+            <longitud>5</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Identificador único del estudiante.</descripcion>
+            <ejemplo>10245</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>nombre</nombre>
+            <tipo>Texto</tipo>
+            <longitud>50</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Nombre del estudiante.</descripcion>
+            <ejemplo>Jose</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>apellido</nombre>
+            <tipo>Texto</tipo>
+            <longitud>50</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Apellido del estudiante.</descripcion>
+            <ejemplo>Solorzano</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>cif</nombre>
+            <tipo>Texto</tipo>
+            <longitud>15</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Codigo de identificacion del estudiante.</descripcion>
+            <ejemplo>20261234</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>correo</nombre>
+            <tipo>Texto</tipo>
+            <longitud>100</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Correo electronico del estudiante.</descripcion>
+            <ejemplo>estudiante@uam.edu.ni</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>carrera</nombre>
+            <tipo>Texto</tipo>
+            <longitud>100</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Carrera universitaria que cursa el estudiante.</descripcion>
+            <ejemplo>Ingenieria en Sistemas</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>semestre</nombre>
+            <tipo>Entero</tipo>
+            <longitud>2</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Semestre academico actual del estudiante.</descripcion>
+            <ejemplo>2</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>estado</nombre>
+            <tipo>Texto</tipo>
+            <longitud>20</longitud>
+            <obligatorio>Si</obligatorio>
+            <dominio>Activo, Inactivo</dominio>
+            <descripcion>Estado actual del estudiante dentro del sistema.</descripcion>
+            <ejemplo>Activo</ejemplo>
+        </campo>
+
+    </entidad>
+
+
+    <!-- ================================================= -->
+    <!-- ACTIVIDAD -->
+    <!-- ================================================= -->
+
+    <entidad nombre="Actividad" codigo="DD-02">
+
+        <campo>
+            <nombre>id_actividad</nombre>
+            <tipo>Entero</tipo>
+            <longitud>6</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Identificador unico de la actividad.</descripcion>
+            <ejemplo>10025</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>id_estudiante</nombre>
+            <tipo>Entero</tipo>
+            <longitud>5</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Identificador del estudiante que realizo la actividad.</descripcion>
+            <ejemplo>10245</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>id_categoria</nombre>
+            <tipo>Entero</tipo>
+            <longitud>3</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Identificador de la categoria de la actividad.</descripcion>
+            <ejemplo>1</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>nombre_actividad</nombre>
+            <tipo>Texto</tipo>
+            <longitud>100</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Nombre de la actividad realizada.</descripcion>
+            <ejemplo>Apoyo en evento universitario</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>descripcion</nombre>
+            <tipo>Texto</tipo>
+            <longitud>250</longitud>
+            <obligatorio>No</obligatorio>
+            <descripcion>Descripcion detallada de la actividad.</descripcion>
+            <ejemplo>Apoyo durante evento deportivo.</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>fecha</nombre>
+            <tipo>Fecha</tipo>
+            <longitud>10</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Fecha en que se realizo la actividad.</descripcion>
+            <ejemplo>2026-09-20</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>hora_inicio</nombre>
+            <tipo>Hora</tipo>
+            <longitud>5</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Hora en que inicio la actividad.</descripcion>
+            <ejemplo>08:00</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>hora_fin</nombre>
+            <tipo>Hora</tipo>
+            <longitud>5</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Hora en que finalizo la actividad.</descripcion>
+            <ejemplo>12:00</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>horas</nombre>
+            <tipo>Decimal</tipo>
+            <longitud>5,2</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Cantidad de horas realizadas en la actividad.</descripcion>
+            <ejemplo>4.00</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>estado</nombre>
+            <tipo>Texto</tipo>
+            <longitud>20</longitud>
+            <obligatorio>Si</obligatorio>
+            <dominio>Pendiente, Aprobada, Rechazada</dominio>
+            <descripcion>Estado actual de la actividad.</descripcion>
+            <ejemplo>Pendiente</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>observacion</nombre>
+            <tipo>Texto</tipo>
+            <longitud>250</longitud>
+            <obligatorio>No</obligatorio>
+            <descripcion>Comentario adicional relacionado con la actividad.</descripcion>
+            <ejemplo>Actividad pendiente de revision.</ejemplo>
+        </campo>
+
+    </entidad>
+
+
+    <!-- ================================================= -->
+    <!-- EVIDENCIA -->
+    <!-- ================================================= -->
+
+    <entidad nombre="Evidencia" codigo="DD-03">
+
+        <campo>
+            <nombre>id_evidencia</nombre>
+            <tipo>Entero</tipo>
+            <longitud>6</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Identificador unico de la evidencia.</descripcion>
+            <ejemplo>50025</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>id_actividad</nombre>
+            <tipo>Entero</tipo>
+            <longitud>6</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Identificador de la actividad a la que pertenece la evidencia.</descripcion>
+            <ejemplo>10025</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>nombre_archivo</nombre>
+            <tipo>Texto</tipo>
+            <longitud>150</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Nombre del archivo utilizado como evidencia.</descripcion>
+            <ejemplo>comprobante01.jpg</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>tipo_archivo</nombre>
+            <tipo>Texto</tipo>
+            <longitud>20</longitud>
+            <obligatorio>Si</obligatorio>
+            <dominio>JPG, PNG, PDF</dominio>
+            <descripcion>Formato del archivo de evidencia.</descripcion>
+            <ejemplo>JPG</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>ruta_archivo</nombre>
+            <tipo>Texto</tipo>
+            <longitud>250</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Ubicacion donde se encuentra almacenado el archivo.</descripcion>
+            <ejemplo>uploads/comprobante01.jpg</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>fecha_subida</nombre>
+            <tipo>Fecha</tipo>
+            <longitud>10</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Fecha en que se registro la evidencia.</descripcion>
+            <ejemplo>2026-09-20</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>estado</nombre>
+            <tipo>Texto</tipo>
+            <longitud>20</longitud>
+            <obligatorio>Si</obligatorio>
+            <dominio>Pendiente, Aprobada, Rechazada</dominio>
+            <descripcion>Estado de revision de la evidencia.</descripcion>
+            <ejemplo>Pendiente</ejemplo>
+        </campo>
+
+    </entidad>
+
+
+    <!-- ================================================= -->
+    <!-- CATEGORIA -->
+    <!-- ================================================= -->
+
+    <entidad nombre="Categoria" codigo="DD-04">
+
+        <campo>
+            <nombre>id_categoria</nombre>
+            <tipo>Entero</tipo>
+            <longitud>3</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Identificador unico de la categoria.</descripcion>
+            <ejemplo>1</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>nombre_categoria</nombre>
+            <tipo>Texto</tipo>
+            <longitud>50</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Nombre de la categoria.</descripcion>
+            <ejemplo>Horas laborales</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>descripcion</nombre>
+            <tipo>Texto</tipo>
+            <longitud>150</longitud>
+            <obligatorio>No</obligatorio>
+            <descripcion>Descripcion de la categoria.</descripcion>
+            <ejemplo>Horas de apoyo laboral.</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>meta_horas</nombre>
+            <tipo>Decimal</tipo>
+            <longitud>5,2</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Cantidad de horas requeridas para completar la categoria.</descripcion>
+            <ejemplo>25.00</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>estado</nombre>
+            <tipo>Texto</tipo>
+            <longitud>20</longitud>
+            <obligatorio>Si</obligatorio>
+            <dominio>Activa, Inactiva</dominio>
+            <descripcion>Estado de la categoria.</descripcion>
+            <ejemplo>Activa</ejemplo>
+        </campo>
+
+    </entidad>
+
+
+    <!-- ================================================= -->
+    <!-- META DE HORAS -->
+    <!-- ================================================= -->
+
+    <entidad nombre="MetaHoras" codigo="DD-05">
+
+        <campo>
+            <nombre>id_meta</nombre>
+            <tipo>Entero</tipo>
+            <longitud>5</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Identificador de la meta.</descripcion>
+            <ejemplo>20001</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>id_estudiante</nombre>
+            <tipo>Entero</tipo>
+            <longitud>5</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Estudiante asociado a la meta.</descripcion>
+            <ejemplo>10245</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>id_categoria</nombre>
+            <tipo>Entero</tipo>
+            <longitud>3</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Categoria relacionada con la meta.</descripcion>
+            <ejemplo>1</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>horas_requeridas</nombre>
+            <tipo>Decimal</tipo>
+            <longitud>5,2</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Total de horas que el estudiante debe completar.</descripcion>
+            <ejemplo>25.00</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>horas_completadas</nombre>
+            <tipo>Decimal</tipo>
+            <longitud>5,2</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Total de horas aprobadas por el estudiante.</descripcion>
+            <ejemplo>18.00</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>horas_pendientes</nombre>
+            <tipo>Decimal</tipo>
+            <longitud>5,2</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Total de horas que faltan para completar la meta.</descripcion>
+            <ejemplo>7.00</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>porcentaje</nombre>
+            <tipo>Decimal</tipo>
+            <longitud>5,2</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Porcentaje de avance del estudiante.</descripcion>
+            <ejemplo>72.00</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>periodo</nombre>
+            <tipo>Texto</tipo>
+            <longitud>20</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Periodo academico correspondiente.</descripcion>
+            <ejemplo>II Semestre 2026</ejemplo>
+        </campo>
+
+    </entidad>
+
+
+    <!-- ================================================= -->
+    <!-- VALIDACION -->
+    <!-- ================================================= -->
+
+    <entidad nombre="Validacion" codigo="DD-06">
+
+        <campo>
+            <nombre>id_validacion</nombre>
+            <tipo>Entero</tipo>
+            <longitud>6</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Identificador de la validacion.</descripcion>
+            <ejemplo>70001</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>id_actividad</nombre>
+            <tipo>Entero</tipo>
+            <longitud>6</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Actividad que esta siendo revisada.</descripcion>
+            <ejemplo>10025</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>id_admin</nombre>
+            <tipo>Entero</tipo>
+            <longitud>5</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Administrador que realiza la validacion.</descripcion>
+            <ejemplo>1</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>fecha_validacion</nombre>
+            <tipo>Fecha</tipo>
+            <longitud>10</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Fecha en que se realizo la validacion.</descripcion>
+            <ejemplo>2026-09-21</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>resultado</nombre>
+            <tipo>Texto</tipo>
+            <longitud>20</longitud>
+            <obligatorio>Si</obligatorio>
+            <dominio>Aprobada, Rechazada</dominio>
+            <descripcion>Resultado de la validacion.</descripcion>
+            <ejemplo>Aprobada</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>comentario</nombre>
+            <tipo>Texto</tipo>
+            <longitud>250</longitud>
+            <obligatorio>No</obligatorio>
+            <descripcion>Comentario realizado por el administrador.</descripcion>
+            <ejemplo>Evidencia valida.</ejemplo>
+        </campo>
+
+    </entidad>
+
+
+    <!-- ================================================= -->
+    <!-- ADMINISTRADOR -->
+    <!-- ================================================= -->
+
+    <entidad nombre="Administrador" codigo="DD-07">
+
+        <campo>
+            <nombre>id_admin</nombre>
+            <tipo>Entero</tipo>
+            <longitud>5</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Identificador unico del administrador.</descripcion>
+            <ejemplo>1</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>nombre</nombre>
+            <tipo>Texto</tipo>
+            <longitud>50</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Nombre del administrador.</descripcion>
+            <ejemplo>Administrador</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>correo</nombre>
+            <tipo>Texto</tipo>
+            <longitud>100</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Correo electronico del administrador.</descripcion>
+            <ejemplo>admin@uam.edu.ni</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>usuario</nombre>
+            <tipo>Texto</tipo>
+            <longitud>30</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Nombre de usuario para iniciar sesion.</descripcion>
+            <ejemplo>admin</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>contrasena</nombre>
+            <tipo>Texto</tipo>
+            <longitud>100</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Credencial utilizada para acceder al sistema.</descripcion>
+            <ejemplo>********</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>estado</nombre>
+            <tipo>Texto</tipo>
+            <longitud>20</longitud>
+            <obligatorio>Si</obligatorio>
+            <dominio>Activo, Inactivo</dominio>
+            <descripcion>Estado de la cuenta del administrador.</descripcion>
+            <ejemplo>Activo</ejemplo>
+        </campo>
+
+    </entidad>
+
+
+    <!-- ================================================= -->
+    <!-- REPORTE -->
+    <!-- ================================================= -->
+
+    <entidad nombre="Reporte" codigo="DD-08">
+
+        <campo>
+            <nombre>id_reporte</nombre>
+            <tipo>Entero</tipo>
+            <longitud>6</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Identificador unico del reporte.</descripcion>
+            <ejemplo>80001</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>id_estudiante</nombre>
+            <tipo>Entero</tipo>
+            <longitud>5</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Estudiante propietario del reporte.</descripcion>
+            <ejemplo>10245</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>fecha_generacion</nombre>
+            <tipo>Fecha</tipo>
+            <longitud>10</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Fecha en que se genero el reporte.</descripcion>
+            <ejemplo>2026-09-25</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>periodo</nombre>
+            <tipo>Texto</tipo>
+            <longitud>20</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Periodo academico del reporte.</descripcion>
+            <ejemplo>II Semestre 2026</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>total_actividades</nombre>
+            <tipo>Entero</tipo>
+            <longitud>4</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Cantidad total de actividades registradas.</descripcion>
+            <ejemplo>12</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>horas_acumuladas</nombre>
+            <tipo>Decimal</tipo>
+            <longitud>5,2</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Total de horas aprobadas acumuladas.</descripcion>
+            <ejemplo>21.50</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>horas_pendientes</nombre>
+            <tipo>Decimal</tipo>
+            <longitud>5,2</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Total de horas pendientes.</descripcion>
+            <ejemplo>3.50</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>porcentaje_avance</nombre>
+            <tipo>Decimal</tipo>
+            <longitud>5,2</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Porcentaje de avance del estudiante.</descripcion>
+            <ejemplo>86.00</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>formato</nombre>
+            <tipo>Texto</tipo>
+            <longitud>10</longitud>
+            <obligatorio>Si</obligatorio>
+            <dominio>PDF, Excel</dominio>
+            <descripcion>Formato en que se genera el reporte.</descripcion>
+            <ejemplo>PDF</ejemplo>
+        </campo>
+
+    </entidad>
+
+
+    <!-- ================================================= -->
+    <!-- SOLICITUD DE CONVALIDACION -->
+    <!-- ================================================= -->
+
+    <entidad nombre="SolicitudConvalidacion" codigo="DD-09">
+
+        <campo>
+            <nombre>id_solicitud</nombre>
+            <tipo>Entero</tipo>
+            <longitud>6</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Identificador unico de la solicitud.</descripcion>
+            <ejemplo>90001</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>id_estudiante</nombre>
+            <tipo>Entero</tipo>
+            <longitud>5</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Estudiante que realiza la solicitud.</descripcion>
+            <ejemplo>10245</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>fecha_solicitud</nombre>
+            <tipo>Fecha</tipo>
+            <longitud>10</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Fecha en que se realiza la solicitud.</descripcion>
+            <ejemplo>2026-10-01</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>tipo_solicitud</nombre>
+            <tipo>Texto</tipo>
+            <longitud>50</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Tipo de tramite solicitado.</descripcion>
+            <ejemplo>Convalidacion</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>periodo</nombre>
+            <tipo>Texto</tipo>
+            <longitud>20</longitud>
+            <obligatorio>Si</obligatorio>
+            <descripcion>Periodo academico asociado a la solicitud.</descripcion>
+            <ejemplo>II Semestre 2026</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>estado</nombre>
+            <tipo>Texto</tipo>
+            <longitud>20</longitud>
+            <obligatorio>Si</obligatorio>
+            <dominio>Pendiente, Aprobada, Rechazada</dominio>
+            <descripcion>Estado actual de la solicitud.</descripcion>
+            <ejemplo>Pendiente</ejemplo>
+        </campo>
+
+        <campo>
+            <nombre>observacion</nombre>
+            <tipo>Texto</tipo>
+            <longitud>250</longitud>
+            <obligatorio>No</obligatorio>
+            <descripcion>Observacion realizada durante la revision.</descripcion>
+            <ejemplo>Documentacion en revision.</ejemplo>
+        </campo>
+
+    </entidad>
+
+</diccionarioDatos>

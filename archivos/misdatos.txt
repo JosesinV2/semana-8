@@ -1,0 +1,9 @@
+nombre: Jose Adan Almendarez Solorzano
+edad: 17 anos
+universidad: UAM
+madre: GUuiselle Maria Solorzano
+telefono: 8773 8292
+instagram: jos.slrz 
+perros: 8
+hijos: 0
+madres: 1
